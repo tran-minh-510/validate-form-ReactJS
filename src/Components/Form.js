@@ -53,6 +53,12 @@ export default class Form extends Component {
                 position: toast.POSITION.TOP_RIGHT,
             });
         } else {
+            if (this.state.regexSatisfi.email && this.state.regexSatisfi.password === false) {
+                toast.warn("Mật khẩu chưa đủ mạnh (phải trên 6 kí tự và ít nhất 1 chữ hoa, 1 chữ thường, 1 số, 1 kí tự đặc biệt) !", {
+                    position: toast.POSITION.TOP_RIGHT
+                });
+                return
+            }
             toast.error("Error !", {
                 position: toast.POSITION.TOP_RIGHT,
             });
